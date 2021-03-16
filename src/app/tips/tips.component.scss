@@ -1,0 +1,30 @@
+.div-text-center {
+  text-align: center;
+}
+.img-display-inline {
+  display: inline-block;
+}
+.div-background-align {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  margin-top: 10%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.2;
+}
+.div-tips-align {
+  margin-top: 5%;
+  font-size: 1.1em;
+}
+.glyphicon-color-green {
+  color: darkolivegreen;
+}
+.span-tip-align {
+  margin-left: 1%;
+}

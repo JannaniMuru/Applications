@@ -1,0 +1,228 @@
+.well {
+    min-height: 80px;
+    max-height: 80px;
+  }
+  .well-top-notify {
+    min-height: 20px;
+    max-height: 20px;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    background-color: #333;
+  }
+  .glyphicon-home-align {
+    color: white;
+    font-size: 1.5em;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 3;
+  }
+  .glyphicon-push-align {
+    color: white;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  .col-align {
+    text-align: center;
+  }
+  
+  #water-tracker {
+    margin-top: 5px;
+    line-height: 2;
+    float: left;
+    color: white;
+    font-size: 1.8em;
+  }
+  
+  #cog-align {
+    color: white;
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 3;
+  }
+  
+  #close-align {
+    border-color: white;
+    background-color: #333;
+    //   font-size: 1em;
+    cursor: pointer;
+    float: right;
+    line-height: 0.5;
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
+  
+  #push-text {
+    color: white;
+    padding-left: 0.5%;
+    font-size: 14px;
+  }
+  
+  .container-push-notify {
+    background-color: #333;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  .div-header-top {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+  }
+  .div-header-sublevel {
+    overflow: auto;
+    background-color: #4682b4;
+    width: 100%;
+    overflow: hidden;
+    height: 120px;
+  }
+  .div-full-width {
+    width: 100%;
+  }
+  .well-dashboard-alarm-align {
+    text-align: center;
+    background-color: white;
+    position: relative;
+    line-height: 3;
+  }
+  #next-alert-text {
+    color: steelblue;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  #glyphicon-bell-enabled {
+    color: #4682b4;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    line-height: 1.5;
+  }
+  #glyphicon-bell-disabled {
+    color: lightgrey;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    line-height: 1.5;
+  }
+  .well-dashboard-score-align {
+    text-align: center;
+    background-color: white;
+    position: relative;
+    line-height: 2;
+  }
+  #span_score_orange {
+    color: orangered;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  #span_score_blue {
+    color: steelblue;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .glyphicon-pencil-align {
+    color: #4682b4;
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .well-dashboard-certificate-align {
+    text-align: center;
+    background-color: white;
+  }
+  .glyphicon-certificate-align {
+    color: yellowgreen;
+    line-height: 1.5;
+    font-size: 1.5em;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #chart-water-meter {
+    width: 100%;
+    height: 400px;
+    display: block;
+  }
+  .div-margin-top {
+    margin-top: 5%;
+  }
+  .well-text-record {
+    overflow-y: auto;
+    min-height: 285px;
+    position: relative;
+  }
+  .glyphicon-plus-align {
+    color: crimson;
+    position: absolute;
+    right: 0;
+    font-size: 2em;
+    display: block;
+    cursor: pointer;
+  }
+  #certificate-text {
+    color: steelblue;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 3;
+  }
+  .div-alarm-time {
+    cursor: pointer;
+    margin-top: 3%;
+  }
+  .glyphicon-alarm-align {
+    font-size: 1.5em;
+  }
+  
+  .div-records-align {
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .span-text-black {
+    color: black;
+  }
+  .span-alarm-at-align {
+    color: black;
+    display: inline-block;
+  }
+  .span-record-align {
+    color: black;
+    display: inline-block;
+    font-size: 1em;
+  }
+  .btn-color-white {
+    color: white;
+  }
+  .div-margin {
+    margin-top: 2%;
+  }
+  
+  @media all and (max-width: 600px) {
+    #water-tracker {
+      margin-top: 5px;
+      line-height: 2.5;
+      float: left;
+      color: white;
+      font-size: 1.5em;
+    }
+  }
+  @media all and (max-width: 300px) {
+    #water-tracker {
+      margin-top: 5px;
+      line-height: 2.5;
+      float: left;
+      color: white;
+      font-size: 1.3em;
+    }
+    #push-text {
+      margin-right: 5px;
+    }
+  }
+  

@@ -1,0 +1,70 @@
+<!--Top banner-->
+<div class="jumbotron jumbotron-banner" style="background-image: url(assets/images/steelGreen.jpg);">
+	<div class="jumbotron-title">
+		<span id="banner_title">Stay hydrated, stay healthy</span>
+		<span id="banner_subtitle">Now made easy!</span>
+	</div>
+</div>
+
+<!--Input fetch form-->
+<div class="container-fluid">
+	<div *ngIf="showLoading; then loader else content"></div>
+	<ng-template #loader>
+		<div class="row text-center">
+			<img src="assets/images/loading.gif" class="img-responsive div-display-inline-block" alt="Image">
+			</div>
+		</ng-template>
+		<ng-template #content>
+			<form class="form-horizontal form-landing-header">
+				<div class="form-group">
+					<label class="control-label col-sm-offset-2 col-sm-2" for="gender">Gender:</label>
+					<div class="col-sm-4">
+						<select class="form-control form-landing-select"  [(ngModel)]="selectedGender" name="genderSelect">
+							<option *ngFor="let eachValue of intitialData">{{eachValue}}</option>
+						</select>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-offset-2  col-sm-2" for="height">Height:</label>
+					<div class="col-sm-4 div-remove-padding">
+						<div class="col-sm-6">
+							<input type="number" [(ngModel)]="userHeight" class="form-control" id="height" name="height" min={{minHeight}} max={{maxHeight}}>
+							</div>
+							<div class="col-sm-6">
+								<select class="form-control form-landing-select" [(ngModel)]="selectedHeightCalib" name="height" (change)="heightChanged()">
+									<option *ngFor="let heightCalib of heightData">{{heightCalib}}</option>
+								</select>
+							</div>
+							<div class="col-sm-4"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-offset-2  col-sm-2" for="weight">Weight:</label>
+						<div class="col-sm-4 div-remove-padding">
+							<div class="col-sm-6">
+								<input type="number" [(ngModel)]="userWeight" class="form-control" id="weight" name="weight" min={{minWeight}} max={{maxWeight}}>
+								</div>
+								<div class="col-sm-6">
+									<select class="form-control form-landing-select" [(ngModel)]="selectedWeightCalib" name="weight" (change)="weightChanged()">
+										<option *ngFor="let weightCalib of weightData">{{weightCalib}}</option>
+									</select>
+								</div>
+								<div class="col-sm-4"></div>
+							</div>
+						</div>
+						<div class="form-group text-center">
+							<div class="checkbox div-display-inline-block">
+								<label>
+									<input type="checkbox" name="remember"> Remember me
+									
+									
+									</label>
+								</div>
+							</div>
+							<div class="form-group text-center">
+								<button type="submit" class="btn btn-primary button-submit" (click)="updateUserDetails()">Submit</button>
+							</div>
+						</form>
+							</ng-template>
+						</div>

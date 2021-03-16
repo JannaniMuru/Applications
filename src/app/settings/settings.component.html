@@ -1,0 +1,21 @@
+
+
+<app-navbar-general [header]="'Settings'"></app-navbar-general>
+
+
+<!--Settings -->
+
+<div class="div-header">
+    <div id="settings" (click)="navigateToUrl(choice.actionUrl)" class="well well-settings-align" *ngFor="let choice of settingsData" >
+       {{choice.type}}
+       <div class="div-float-right">
+         <span class="{{choice.icon}} span-icon-align"></span>
+       </div>
+</div>
+</div>
+
+
+
+
+
+

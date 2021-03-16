@@ -1,0 +1,26 @@
+<app-navbar-general [header]="'Logs'"></app-navbar-general>
+
+<!--Water logs-->
+<div class="container text-center" >
+	<div class="col-sm-12 div-margin-top" >
+		<div class="well well-text-record">
+			<span class="span-latest-text"> Your latest logs:</span>
+			<div class="row div-water-align"  *ngFor="let eachRecord of waterRecords">
+				<div class="div-date-align"> {{eachRecord.date}}</div>
+				<div class="col-xs-12"*ngFor="let eachData of eachRecord.data">
+					<div class="col-xs-1">
+						<span class="glyphicon glyphicon-tint glyphicon-font-align"></span>
+					</div>
+					<div class="col-xs-3">
+						<span class="span-qty-align"> {{eachData.quantity}}</span>
+						<br>
+						</div>
+						<div class="col-xs-4">
+							<span class="span-time-align">{{eachData.time}} </span>
+							<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

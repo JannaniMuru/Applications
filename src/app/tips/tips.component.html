@@ -1,0 +1,19 @@
+<app-navbar-general [header]="'Tips'"></app-navbar-general>
+
+<!-- Tips -->
+<div class="container-fluid">
+	<div *ngIf="showLoading; then loader else content"></div>
+	<ng-template #loader>
+		<div class="row div-text-center">
+			<img src="assets/images/loading.gif" class="img-responsive img-display-inline" alt="Image">
+			</div>
+		</ng-template>
+		<ng-template #content>
+			<div class="div-background-align"
+        style="background-image:url(assets/images/body_background.jpg);"></div>
+			<div *ngFor="let tip of tipsData" class="div-tips-align">
+				<span class=" glyphicon glyphicon-ok glyphicon-color-green"></span>
+				<span class="span-tip-align">{{tip}}</span>
+			</div>
+		</ng-template>
+	</div>

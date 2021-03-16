@@ -1,0 +1,57 @@
+.jumbotron-banner {
+  margin-bottom: 0;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.jumbotron-title {
+  color: white;
+  margin-top: 0;
+  margin-left: 2%;
+}
+.form-landing-header {
+  margin-top: 3%;
+}
+.form-landing-select {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+}
+.div-remove-padding {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+#banner_title {
+  font-size: 2em;
+  display: block;
+}
+#banner_subtitle {
+  font-size: 1.5em;
+  padding-top: 1%;
+  display: block;
+}
+.text-center {
+  text-align: center;
+}
+.button-submit {
+  display: inline-block;
+  text-align: center;
+  background-color: orangered;
+  border-color: orangered;
+}
+.div-display-inline-block {
+  display: inline-block;
+}
+@media all and (max-width: 600px) {
+  #banner_title {
+    font-size: 1.8em !important;
+  }
+  #banner_subtitle {
+    font-size: 1.2em !important;
+  }
+}

@@ -1,0 +1,122 @@
+<!-- Reminder notification-->
+<div class="container-fluid text-center container-push-notify" *ngIf="displayReminder && alarmTurnedOn">
+	<div class="row well well-top-notify">
+		<span class="glyphicon glyphicon-exclamation-sign glyphicon-push-align"></span>
+		<span id="push-text">Time to hydrate yourself! </span>
+		<button type="button" class="btn btn-danger btn-color-white"  id="close-align" (click)="closeReminder()">Got it ! </button>
+	</div>
+</div>
+<!-- Header template - home screen-->
+<div class="div-header-top">
+	<div class="div-header-sublevel">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 div-full-width">
+				<div class="col-xs-6">
+					<span id="water-tracker">Water Tracker</span>
+				</div>
+				<div class="col-xs-6">
+					<span class="glyphicon glyphicon-cog" (click)="navigateTo('settings')" id="cog-align"></span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="col-xs-4 col-align">
+						<span class="glyphicon glyphicon-home glyphicon-home-align" (click)="navigateTo('home')"></span>
+					</div>
+					<div class="col-xs-4 col-align">
+						<span class="glyphicon glyphicon-stats glyphicon-home-align" (click)="navigateTo('stats')"></span>
+					</div>
+					<div class="col-xs-4 col-align">
+						<span class="glyphicon glyphicon-list-alt glyphicon-home-align" (click)="navigateTo('records')"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Dashboard -->
+<div class="container text-center">
+	<div class="row div-margin">
+		<div class="col-sm-4">
+			<div class="well well-dashboard-alarm-align">
+				<span *ngIf="alarmTurnedOn" id="next-alert-text">Next Alert : {{nextAlarmAt}}</span>
+				<span *ngIf="!alarmTurnedOn" id="next-alert-text">Alert OFF</span>
+				<span class="glyphicon glyphicon-bell" *ngIf="alarmTurnedOn" (click)="toggleAlarm(false)"
+          title="Tap here to turn the alarm OFF" id="glyphicon-bell-enabled"></span>
+				<span class="glyphicon glyphicon-bell" *ngIf="!alarmTurnedOn" (click)="toggleAlarm(true)"
+          title="Tap here to turn the alarm ON" id="glyphicon-bell-disabled" ></span>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="well well-dashboard-score-align">
+				<span id="span_score_orange"> {{waterConsumed}} </span>
+				<span id="span_score_blue"> /{{waterGoal}} oz </span>
+				<!-- <span class="glyphicon glyphicon-pencil glyphicon-pencil-align" (click)="showSelectionModal()"></span> -->
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="well well-dashboard-certificate-align">
+				<span class="glyphicon glyphicon-certificate glyphicon-certificate-align"></span>
+				<span id="certificate-text"> Beginner </span>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Daily records and water meter -->
+<div class="container text-center">
+	<div class="col-sm-6 div-margin-top">
+		<div class="well well-text-record">
+			<span class="div-records-align"> Today's records:</span>
+			<span class=" glyphicon glyphicon-plus-sign glyphicon-plus-align" (click)="addWaterIntake()"></span>
+			<div class="row div-alarm-time" *ngIf="alarmTurnedOn">
+				<div class="col-xs-1">
+					<span class="glyphicon glyphicon-time glyphicon-alarm-align"></span>
+				</div>
+				<div class="col-xs-3">
+					<span class="span-text-black"> Next Time</span>
+				</div>
+				<div class="col-xs-4">
+					<span class="span-alarm-at-align"> {{nextAlarmAt}} </span>
+					<br>
+					</div>
+				</div>
+				<div class="row div-alarm-time" (click)="addWaterIntake()" *ngFor="let eachRecord of waterRecords">
+					<div class="col-xs-1">
+						<span class="glyphicon glyphicon-tint glyphicon-alarm-align"></span>
+					</div>
+					<div class="col-xs-3">
+						<span class="span-record-align"> {{eachRecord.quantity}}</span>
+						<br>
+						</div>
+						<div class="col-xs-4">
+							<span class="span-record-align">{{eachRecord.time}} </span>
+							<br>
+							</div>
+							<div class="col-xs-3">
+								<span class="glyphicon glyphicon-trash span-text-black" (click)="removeEntry(eachRecord.time)"></span>
+							</div>
+						</div>
+						<div class="row div-alarm-time" *ngIf="showCurrentRecord">
+							<div class="col-xs-1">
+								<span class="glyphicon glyphicon-tint glyphicon-alarm-align"></span>
+							</div>
+							<div class="col-xs-3">
+								<span class="span-record-align"> {{waterIntakeToday}}</span>
+								<br>
+								</div>
+								<div class="col-xs-4">
+									<span class="span-record-align">{{currentTime}} </span>
+									<br>
+									</div>
+									<div class="col-xs-3">
+										<span class="glyphicon glyphicon-trash span-text-black" (click)="showCurrentEntry(false)"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<highcharts-chart [Highcharts]="highcharts" [options]="waterMeterChartOptions" id="chart-water-meter"></highcharts-chart>
+						</div>
+</div>

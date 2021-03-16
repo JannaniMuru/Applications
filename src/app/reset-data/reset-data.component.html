@@ -1,0 +1,49 @@
+<app-navbar-general [header]="'My Details'"></app-navbar-general>
+
+<!--Reset Data collection -->
+<div class="container-fluid">
+	<form class="form-horizontal form-landing-header">
+		<div class="form-group">
+			<label class="control-label col-sm-offset-2 col-sm-2" for="gender">Gender:</label>
+			<div class="col-sm-4">
+				<select class="form-control form-landing-select">
+					<option *ngFor="let eachValue of intitialData">{{eachValue}}</option>
+				</select>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-offset-2  col-sm-2" for="height">Height:</label>
+			<div class="col-sm-4 div-remove-padding">
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="height" name="height">
+					</div>
+					<div class="col-sm-6">
+						<select class="form-control form-landing-select">
+							<option *ngFor="let heightCalib of heightData">{{heightCalib}}</option>
+						</select>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-offset-2  col-sm-2" for="weight">Weight:</label>
+				<div class="col-sm-4 div-remove-padding">
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="weight" name="weight">
+						</div>
+						<div class="col-sm-6">
+							<select class="form-control form-landing-select">
+								<option *ngFor="let weightCalib of weightData">{{weightCalib}}</option>
+							</select>
+						</div>
+						<div class="col-sm-4"></div>
+					</div>
+				</div>
+				<div class="form-group text-center">
+					<button type="button" class="btn btn-primary button-submit" (click)="updateDetails()">Update</button>
+				</div>
+			</form>
+			<br>
+				<br>
+				</div>

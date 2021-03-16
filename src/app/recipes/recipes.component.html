@@ -1,0 +1,32 @@
+
+
+
+<app-navbar-general [header]="'Recipes'"></app-navbar-general>
+<!--Recipe list-->
+<div class="container text-center">
+	<div class="well div-recipe-align">
+		<span class="span-subtitle-align"> Bored of the normal water? Try out these exciting recipes.. </span>
+	</div>
+	<div class="well well-recipe-align">
+		<div class="col-sm-4" *ngFor="let recipe of recipeData">
+			<div class="panel panel-primary">
+				<div class="panel-heading panel-heading-align">{{recipe.title}}</div>
+				<div class="panel-body">
+					<img src="assets/images/{{recipe.image}}" class="img-responsive" alt="Image">
+					</div>
+					<div class="panel-footer">
+						<ul>
+							<li class="p-text-align" *ngFor="let eachItem of recipe.ingredients">{{eachItem}}</li>
+						</ul>
+						<p class="li-text-align">{{recipe.method}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+

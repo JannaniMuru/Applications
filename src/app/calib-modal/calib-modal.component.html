@@ -1,0 +1,45 @@
+<!-- Modal Header -->
+<div class="modal-header">
+  <div class="col-xs-12 div-remove-padding">
+    <div class="col-xs-8 div-remove-padding">
+      <span  id="calib-text"> Enter your intake: </span>
+    </div>
+    <div class="col-xs-3 div-padding-left">
+      <input type="text" class="form-control" id="waterConsumed" value="{{waterConsumed}}" (change)="enableAdd()">
+    </div>
+    <div class="col-xs-1 div-remove-padding">
+      <span  id="calib-text"> Oz </span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Body -->
+
+<div class="modal-body">
+  <div class="row">
+    <div class="col-xs-6" (click)="bottleChosen(true)">
+      <div class="panel panel-primary" id="bottle">
+        <div class="panel-body"> <img src="assets/images/bottle.png" 
+            title='Click here to choose' class="img-responsive div-image" alt="Image">
+        </div>
+        <div class="panel-footer" id="calib-text">32 oz
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6" (click)="bottleChosen(false)">
+      <div class="panel panel-primary" id="glass">
+        <div class="panel-body"><img src="assets/images/glass.jpg" 
+            title='Click here to choose' class="img-responsive div-image" alt="Image">
+        </div>
+        <div class="panel-footer" id="calib-text">8 oz
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="addWaterIntake()" [disabled]="!addData">Add</button>
+  <button type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
+</div>

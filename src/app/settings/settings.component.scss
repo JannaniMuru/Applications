@@ -1,0 +1,31 @@
+#settings {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0.8;
+  }
+  #settings:hover {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    border-color: steelblue;
+    opacity: 1;
+  }
+  .div-header {
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .well-settings-align {
+    margin-bottom: 0px;
+    background-color: white;
+  }
+  .div-float-right {
+    float: right;
+  }
+  .span-icon-align {
+    color: #4682b4;
+    font-size: 1.5em;
+    cursor: pointer;
+    line-height: 1;
+  }
+  

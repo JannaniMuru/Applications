@@ -1,0 +1,24 @@
+
+
+<app-navbar-general [header]="'Statistics'"></app-navbar-general>
+
+<!--Weekly and monthly filter-->
+<div class="container-fluid">
+	<form class="form-horizontal form-landing-header">
+		<div class="form-group">
+			<label class="control-label col-sm-offset-2 col-sm-2" ></label>
+			<div class="col-sm-4">
+				<select class="form-control select-border-align" [(ngModel)]="selectedFilter" (change)="filter()" name="historyTypeSelect">
+					<option *ngFor="let eachValue of historyTypes">{{eachValue}}</option>
+				</select>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</form>
+</div>
+
+<!--Weekly and monthly charts-->
+<highcharts-chart
+   [Highcharts] = "highcharts" 
+   [options] = "historyChartOptions" 
+   class="charts-align"></highcharts-chart>
