@@ -184,5 +184,9 @@ export class HomeComponent implements OnInit {
     };
     this.bsModalRef = this.modalService.show(AlarmModalComponent, { initialState, class: 'modal-sm' });
   }
-
+ngOnDestroy(){
+  if(this.subscription && this.subscription.unsubscribe){
+    this.subscription.unsubscribe();
+  }
+}
 }
