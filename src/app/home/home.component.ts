@@ -116,6 +116,7 @@ export class HomeComponent implements OnInit {
   showCurrentEntry(show) {
     if (!show) {
       this.waterConsumed = 0;
+      this.waterIntakeToday = 0 + ' oz';
       this.waterMeterChartOptions = chartOptions(this.waterConsumed, this.waterGoal);
     }
     this.showCurrentRecord = show;
